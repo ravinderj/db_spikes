@@ -1,0 +1,23 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width" />
+      <script src="/js/index.js" charset="utf-8"></script>
+      <title>Index</title>
+    </head>
+    <body>
+      <form action="/addInfo" method="post" accept-charset="utf-8">
+        <label for="name">Name</label> 
+        <input type="text" name="name" id="name"/>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"/>
+        <input type="submit" name="submit" id="submit" value="submit"/>
+      </form>
+      <div id="details">
+        <h2>Get details</h2>
+        <input type="text" name="username" id="username"/>
+        <button type="button" onclick="fetchDetails()">fetch</button>  
+      </div>
+    </body>
+  </html>
