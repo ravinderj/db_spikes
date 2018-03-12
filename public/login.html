@@ -1,192 +1,197 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
         /* Full-width input fields */
 
         input[type=text],
         input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
         }
 
         /* Set a style for all buttons */
 
         button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
         }
 
         button:hover {
-            opacity: 0.8;
+          opacity: 0.8;
         }
 
         /* Extra styles for the cancel button */
 
         .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
         }
 
         /* Center the image and position the close button */
 
         .imgcontainer {
-            text-align: center;
-            margin: 24px 0 12px 0;
-            position: relative;
+          text-align: center;
+          margin: 24px 0 12px 0;
+          position: relative;
         }
 
         img.avatar {
-            width: 30%;
-            border-radius: 50%;
+          width: 30%;
+          border-radius: 50%;
         }
 
         .container {
-            padding: 16px;
+          padding: 16px;
         }
 
         span.psw {
-            float: right;
-            padding-top: 16px;
+          float: right;
+          padding-top: 16px;
         }
 
         /* The Modal (background) */
 
         .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-            padding-top: 60px;
+          display: none;
+          /* Hidden by default */
+          position: fixed;
+          /* Stay in place */
+          z-index: 1;
+          /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%;
+          /* Full width */
+          height: 100%;
+          /* Full height */
+          overflow: auto;
+          /* Enable scroll if needed */
+          background-color: rgb(0, 0, 0);
+          /* Fallback color */
+          background-color: rgba(0, 0, 0, 0.4);
+          /* Black w/ opacity */
+          padding-top: 60px;
         }
 
         /* Modal Content/Box */
 
         .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto 15% auto;
-            /* 5% from the top, 15% from the bottom and centered */
-            border: 1px solid #888;
-            width: 35%;
-            /* Could be more or less, depending on screen size */
+          background-color: #fefefe;
+          margin: 5% auto 15% auto;
+          /* 5% from the top, 15% from the bottom and centered */
+          border: 1px solid #888;
+          width: 35%;
+          /* Could be more or less, depending on screen size */
         }
 
         /* The Close Button (x) */
 
         .close {
-            position: absolute;
-            right: 25px;
-            top: 0;
-            color: #000;
-            font-size: 35px;
-            font-weight: bold;
+          position: absolute;
+          right: 25px;
+          top: 0;
+          color: #000;
+          font-size: 35px;
+          font-weight: bold;
         }
 
         .close:hover,
         .close:focus {
-            color: red;
-            cursor: pointer;
+          color: red;
+          cursor: pointer;
         }
 
         /* Add Zoom Animation */
 
         .animate {
-            -webkit-animation: animatezoom 0.6s;
-            animation: animatezoom 0.6s
+          -webkit-animation: animatezoom 0.6s;
+          animation: animatezoom 0.6s
         }
 
         @-webkit-keyframes animatezoom {
-            from {
-                -webkit-transform: scale(0)
-            }
-            to {
-                -webkit-transform: scale(1)
-            }
+          from {
+            -webkit-transform: scale(0)
+          }
+          to {
+            -webkit-transform: scale(1)
+          }
         }
 
         @keyframes animatezoom {
-            from {
-                transform: scale(0)
-            }
-            to {
-                transform: scale(1)
-            }
+          from {
+            transform: scale(0)
+          }
+          to {
+            transform: scale(1)
+          }
         }
 
         /* Change styles for span and cancel button on extra small screens */
 
         @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
-            .cancelbtn {
-                width: 100%;
-            }
+          span.psw {
+            display: block;
+            float: none;
+          }
+          .cancelbtn {
+            width: 100%;
+          }
         }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="fb-root"></div>
     <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=581707785496682&autoLogAppEvents=1';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=581707785496682&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '581707785496682',
-                cookie: true,
-                xfbml: true,
-                version: 'v2.6'
-            });
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: '581707785496682',
+          cookie: true,
+          xfbml: true,
+          version: 'v2.6'
+        });
 
-            FB.AppEvents.logPageView();
+        FB.AppEvents.logPageView();
 
-        };
+      };
 
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+(function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) { return; }
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
     </script>
 
     <h2>Modal Login Form</h2>
@@ -195,50 +200,54 @@
 
     <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/login">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <img src="/images/person.png" alt="Avatar" class="avatar">
-            </div>
+      <form class="modal-content animate" action="/login">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="/images/person.png" alt="Avatar" class="avatar">
+        </div>
 
-            <div class="container">
-                <label for="uname">
-                    <b>Username</b>
-                </label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+        <div class="container">
+          <label for="uname">
+            <b>Username</b>
+          </label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
 
-                <label for="psw">
-                    <b>Password</b>
-                </label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+          <label for="psw">
+            <b>Password</b>
+          </label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
 
-                <button type="submit" value='Log in'>Log in</button>
-                <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false"
-                    data-auto-logout-link="false" data-use-continue-as="false"></div>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-            </div>
+          <button type="submit" value='Log in'>Log in</button>
+          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false"
+                                                                                                            data-auto-logout-link="false" data-use-continue-as="false"></div>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+        <fb:login-button
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+            </fb:login-button>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot
-                    <a href="#">password?</a>
-                </span>
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot
+                <a href="#">password?</a>
+              </span>
             </div>
         </form>
     </div>
 
     <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
+      // Get the modal
+      var modal = document.getElementById('id01');
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
     </script>
 
 </body>
